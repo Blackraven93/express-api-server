@@ -1,8 +1,10 @@
 @endpoint=http://localhost:3303
 
+### Birds get method test (Connection test)
+
 GET {{endpoint}} HTTP/1.1
 
-###
+### Birds create test (GET, POST)
 
 POST {{endpoint}}/birds HTTP/1.1
 Content-Type: application/json
@@ -15,3 +17,35 @@ User-Agent: rest-client
     "canFly": true,
     "weight": 5.4
 }
+
+
+### Birds update test (PUT)
+
+PUT {{endpoint}}/birds/1 HTTP/1.1
+Content-Type: application/json
+User-Agent: rest-client
+
+{
+    "id": 1,
+    "name": "Raven",
+    "color": ["black", "grey", "white"],
+    "canFly": true,
+    "weight": 3
+}
+
+### Birds update test (PATCH)
+
+PATCH  {{endpoint}}/birds/2 HTTP/1.1
+Content-Type: application/json
+User-Agent: rest-client
+
+{
+    "weight": 2.7
+}
+
+### Birds delete test (DELETE)
+
+DELETE  {{endpoint}}/birds/3 HTTP/1.1
+Content-Type: application/json
+User-Agent: rest-client
+

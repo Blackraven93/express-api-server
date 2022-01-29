@@ -6,7 +6,7 @@ export type BirdType = {
     weight: number
 }
 
-export const Bird: BirdType[] = [
+export const Birds: BirdType[] = [
     {
         id: 1,
         name: "raven",

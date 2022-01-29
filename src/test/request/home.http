@@ -1,1 +1,17 @@
-GET http://localhost:3303 HTTP/1.1
+@endpoint=http://localhost:3303
+
+GET {{endpoint}} HTTP/1.1
+
+###
+
+POST {{endpoint}}/birds HTTP/1.1
+Content-Type: application/json
+User-Agent: rest-client
+
+{
+    "id": 8,
+    "name": "eagle",
+    "color": ["black", "yellow", "white"],
+    "canFly": true,
+    "weight": 5.4
+}
